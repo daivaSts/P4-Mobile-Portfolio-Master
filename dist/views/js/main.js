@@ -561,6 +561,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var s = 256;
     /** Calculates how many pizzas can fit to the screen */
     var numOfPizzas = (window.screen.height / 256) * cols;
+    var movingPizzas = document.getElementById("movingPizzas1");
     var elem, v;
 
     for (v = 0; v < numOfPizzas; v += 1) {
@@ -569,7 +570,7 @@ document.addEventListener('DOMContentLoaded', function() {
         elem.src = "images/pizza-q.png";
         elem.style.left = (v % cols) * s + 'px';
         elem.style.top = (Math.floor(v / cols) * s) + 'px';
-        document.querySelector("#movingPizzas1").appendChild(elem);
+        movingPizzas.appendChild(elem);
     }
     updatePositions();
 });
